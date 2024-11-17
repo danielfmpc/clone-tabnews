@@ -5,7 +5,7 @@ const handleClick = () => {
 function Home() {
   return (
     <div>
-      <h1>❤️Raysa, eu te amo, dá uma risadinha se vc gostou!❤️</h1>
+      <h1>❤️Raysa, eu te amo! dá uma risadinha se vc gostou!❤️</h1>
       <button onClick={handleClick}>Clique aqui</button>
     </div>
   )
