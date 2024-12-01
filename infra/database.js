@@ -7,6 +7,7 @@ async function query(queryObject) {
     port: process.env.POSTGRES_PORT,
     host: process.env.POSTGRES_HOST,
     database: process.env.POSTGRES_DB,
+    ssl: process.env.NODE_ENV === "production",
   });
 
   try {
@@ -17,11 +18,10 @@ async function query(queryObject) {
     return result;
   } catch (error) {
     console.log("error :>> ", error);
+    throw error;
   } finally {
     await client.end();
   }
-
-  return null;
 }
 
 export default {
